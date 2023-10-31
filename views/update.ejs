@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update</title>
+</head>
+<body>
+    <% if (user) { %>
+    <form action="/update" method="POST">
+            <input id="id" name="id"  value="<%= user.id %>"hidden>
+            
+            <input id="nombre" type="text" name="nombre"  value="<%= user.nombre %>"><br><br>
+       
+            <input id="edad" type="text" name="edad" value="<%= user.edad %>"><br><br>
+           
+            <input id="telefono" type="text" name="telefono" value="<%= user.telefono %>"><br><br>
+   
+            <input  id="coreo" type="text" name="correo"value="<%= user.correo %>"><br><br>
+   
+            <input  id="area" type="text" name="area" value="<%= user.area %>"><br><br>
+            <button type="submit">Actualizar</button>
+            <a href="/">Cancelar</a>
+    </form>
+   <% } %> 
+</body>
+</html>

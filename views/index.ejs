@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="main.css" />
+    <title>Crud Local</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div class="header2">
+      <h2>Lista de usuarios:</h2>
+      <div class="flex_nuevo">
+        <a href="/create" class="btn btn-success">Nuevo</a>
+        <p>Nota: Los datos se guardan en archivo JSON</p>
+      </div>
+    </div>
+    <table
+      class="table table-bordered table-striped text-center mt-4 table-dark table-hover"
+    >
+      <thead>
+        <tr>
+          <td>ID</td>
+          <td>NOMBRE</td>
+          <td>EDAD</td>
+          <td>TELEFONO</td>
+          <td>CORREO</td>
+          <td>AREA</td>
+          <td>ACCION</td>
+        </tr>
+      </thead>
+      <tbody>
+        <div class="row">
+          <% usuarios.forEach((user, index)=>{ %>
+          <tr>
+            <td><%= user.id = index +1 %></td>
+            <td><%= user.nombre %></td>
+            <td><%= user.edad %></td>
+            <td><%= user.telefono %></td>
+            <td><%= user.correo %></td>
+            <td><%= user.area %></td>
+            <td>
+              <a href="/update/<%= user.id %>" class="btn btn-primary">Upd</a>
+              <a href="/delete/<%= user.id %>" class="btn btn-danger">Del</a>
+            </td>
+          </tr>
+          <% }) %>
+        </div>
+      </tbody>
+    </table>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
